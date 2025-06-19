@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basketball Skill Trainer</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-basketball-ball"></i> Basketball Skill Trainer</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>Personalized Training Plans for Basketball Players</h2>
+                    <p>Create a customized training program based on your position, skill level, and goals.</p>
+                    <button id="get-started-btn" class="btn">Get Started</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="builder" class="builder">
+            <div class="container">
+                <h2>Build Your Training Plan</h2>
+                
+                <!-- Player Profile Form -->
+                <form id="profile-form" class="profile-form">
+                    <div class="form-step active" id="step-1">
+                        <h3>Step 1: Player Information</h3>
+                        <div class="form-group">
+                            <label for="player-name">Your Name</label>
+                            <input type="text" id="player-name" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="player-age">Age</label>
+                            <select id="player-age" required>
+                                <option value="">Select your age range</option>
+                                <option value="youth">Youth (8-12)</option>
+                                <option value="teen">Teen (13-17)</option>
+                                <option value="adult">Adult (18+)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="player-position">Primary Position</label>
+                            <select id="player-position" required>
+                                <option value="">Select your primary position</option>
+                                <option value="pg">Point Guard</option>
+                                <option value="sg">Shooting Guard</option>
+                                <option value="sf">Small Forward</option>
+                                <option value="pf">Power Forward</option>
+                                <option value="c">Center</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="experience-level">Experience Level</label>
+                            <select id="experience-level" required>
+                                <option value="">Select your experience level</option>
+                                <option value="beginner">Beginner</option>
+                                <option value="intermediate">Intermediate</option>
+                                <option value="advanced">Advanced</option>
+                            </select>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="btn next-btn">Next</button>
+                        </div>
+                    </div>
+
+                    <div class="form-step" id="step-2">
+                        <h3>Step 2: Skill Assessment</h3>
+                        
+                        <div class="skill-rating-group">
+                            <h4>Rate your skills from 1 (needs improvement) to 5 (excellent):</h4>
+                            
+                            <div class="skill-rating">
+                                <label>Shooting</label>
+                                <div class="rating-inputs">
+                                    <div class="rating-option">
+                                        <input type="radio" name="shooting" value="1" id="shooting-1" required>
+                                        <label for="shooting-1">1</label>
+                                    </div>
+                                    <div class="rating-option">
+                                        <input type="radio" name="shooting" value="2" id="shooting-2">
+                                        <label for="shooting-2">2</label>
+                                    </div>
+                                    <div class="rating-option">
+                                        <input type="radio" name="shooting" value="3" id="shooting-3">
+                                        <label for="shooting-3">3</label>
+                                    </div>
+                                    <div class="rating-option">
+                                        <input type="radio" name="shooting" value="4" id="shooting-4">
+                                        <label for="shooting-4">4</label>
+                                    </div>
+                                    <div class="rating-option">
+                                        <input type="radio" name="shooting" value="5" id="shooting-5">
+                                        <label for="shooting-5">5</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skill-rating">
+                                <label>Ball Handling</label>
+                                <div class="rating-inputs">
+                                    <div class="rating-option">
+                                        <input type="radio" name="ballhandling" value="1" id="ballhandling-1" required>
+                                        <label for="ballhandling-1">1</label>
+                                    </div>
+                                    <div class="rating-option">
+                                        <input type="radio" name="ballhandling" value="2" id="ballhandling-2">
+                                        <label for="ballhandling-2">2</label>
+                                    </div>
+                                    <div class="rating-option">
+                                        <input type="radio" name="ballhandling" value="3" id="ballhandling-3">
+                                        <label for="ballhandling-3">3</label>
+                                    </div>
+                                    <div class="rating-option">
+                                        <input type="radio" name="ballhandling" value="4" id="ballhandling-4">
+                                        <label for="ballhandling-4">4</label>
+                                    </div>
+                                    <div class="rating-option">
+                                        <input type="radio" name="ballhandling" value="5" id="ballhandling-5">
+                                        <label for="ballhandling-5">5</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skill-rating">
+                                <label>Passing</label>
+                                <div class="rating-inputs">
+                                    <div class="rating-option">
+                                        <input type="radio" name="passing" value="1" id="passing-1" required>
+                                        <label for="passing-1">1</label>
+                                    </div>
+                                    <div class="rating-option">
+                                        <input type="radio" name="passing" value="2" id="passing-2">
+                                        <label for="passing-2">2</label>
+                                    </div>
+                                    <div class="rating-option">
+                                        <input type="radio" name="passing" value="3" id="passing-3">
+                                        <label for="passing-3">3</label>
+                                    </div>
+                                    <div class="rating-option">
+                                        <input type="radio" name="passing" value="4" id="passing-4">
+                                        <label for="passing-4">4</label>
+                                    </div>
+                                    <div class="rating-option">
+                                        <input type="radio" name="passing" value="5" id="passing-5">
+                                        <label for="passing-5">5</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skill-rating">
+                                <label>Defense</label>
+                                <div class="rating-inputs">
+                                    <div class="rating-option">
+                                        <input type="radio" name="defense" value="1" id="defense-1" required>
+                                        <label for="defense-1">1</label>
+                                    </div>
+                                    <div class="rating-option">
+                                        <input type="radio" name="defense" value="2" id="defense-2">
+                                        <label for="defense-2">2</label>
+                                    </div>
+                                    <div class="rating-option">
+                                        <input type="radio" name="defense" value="3" id="defense-3">
+                                        <label for="defense-3">3</label>
+                                    </div>
+                                    <div class="rating-option">
+                                        <input type="radio" name="defense" value="4" id="defense-4">
+                                        <label for="defense-4">4</label>
+                                    </div>
+                                    <div class="rating-option">
+                                        <input type="radio" name="defense" value="5" id="defense-5">
+                                        <label for="defense-5">5</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skill-rating">
+                                <label>Conditioning</label>
+                                <div class="rating-inputs">
+                                    <div class="rating-option">
+                                        <input type="radio" name="conditioning" value="1" id="conditioning-1" required>
+                                        <label for="conditioning-1">1</label>
+                                    </div>
+                                    <div class="rating-option">
+                                        <input type="radio" name="conditioning" value="2" id="conditioning-2">
+                                        <label for="conditioning-2">2</label>
+                                    </div>
+                                    <div class="rating-option">
+                                        <input type="radio" name="conditioning" value="3" id="conditioning-3">
+                                        <label for="conditioning-3">3</label>
+                                    </div>
+                                    <div class="rating-option">
+                                        <input type="radio" name="conditioning" value="4" id="conditioning-4">
+                                        <label for="conditioning-4">4</label>
+                                    </div>
+                                    <div class="rating-option">
+                                        <input type="radio" name="conditioning" value="5" id="conditioning-5">
+                                        <label for="conditioning-5">5</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn prev-btn">Previous</button>
+                            <button type="button" class="btn next-btn">Next</button>
+                        </div>
+                    </div>
+
+                    <div class="form-step" id="step-3">
+                        <h3>Step 3: Training Goals</h3>
+                        
+                        <div class="form-group">
+                            <label>Select your top training priorities (choose up to 3):</label>
+                            <div class="checkbox-group">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="goal-shooting" name="goals[]" value="shooting">
+                                    <label for="goal-shooting">Improve Shooting</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="goal-ballhandling" name="goals[]" value="ballhandling">
+                                    <label for="goal-ballhandling">Better Ball Handling</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="goal-passing" name="goals[]" value="passing">
+                                    <label for="goal-passing">Passing Skills</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="goal-defense" name="goals[]" value="defense">
+                                    <label for="goal-defense">Defensive Footwork</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="goal-strength" name="goals[]" value="strength">
+                                    <label for="goal-strength">Strength & Power</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="goal-conditioning" name="goals[]" value="conditioning">
+                                    <label for="goal-conditioning">Conditioning & Endurance</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="goal-agility" name="goals[]" value="agility">
+                                    <label for="goal-agility">Speed & Agility</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="goal-iq" name="goals[]" value="iq">
+                                    <label for="goal-iq">Basketball IQ</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="training-frequency">How often can you train each week?</label>
+                            <select id="training-frequency" required>
+                                <option value="">Select frequency</option>
+                                <option value="2">1-2 days per week</option>
+                                <option value="3">3-4 days per week</option>
+                                <option value="5">5+ days per week</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="session-length">Typical training session length:</label>
+                            <select id="session-length" required>
+                                <option value="">Select length</option>
+                                <option value="30">30 minutes</option>
+                                <option value="60">60 minutes</option>
+                                <option value="90">90 minutes</option>
+                                <option value="120">2+ hours</option>
+                            </select>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn prev-btn">Previous</button>
+                            <button type="submit" class="btn submit-btn">Generate Training Plan</button>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- Results Section (hidden initially) -->
+                <div id="results" class="results-section hide">
+                    <h3>Your Personalized Training Plan</h3>
+                    <div class="results-container">
+                        <div class="loading-spinner" id="loading-spinner">
+                            <i class="fas fa-basketball-ball fa-spin"></i>
+                            <p>Generating your personalized training plan...</p>
+                        </div>
+                        <div id="plan-container" class="hide">
+                            <!-- Training plan will be inserted here -->
+                        </div>
+                    </div>
+                    <div class="training-actions hide" id="training-actions">
+                        <button id="print-btn" class="btn secondary-btn"><i class="fas fa-print"></i> Print</button>
+                        <button id="save-btn" class="btn secondary-btn"><i class="fas fa-download"></i> Save as PDF</button>
+                        <button id="start-over-btn" class="btn">Create Another Plan</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2>Why Use Our Basketball Skill Trainer?</h2>
+                <div class="features">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-cog"></i>
+                        </div>
+                        <h3>Personalized Plans</h3>
+                        <p>Training plans tailored to your specific position, skill level, and goals.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>AI-Powered</h3>
+                        <p>Our algorithm uses modern training principles to create optimal workout plans.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Skill Progression</h3>
+                        <p>Focused exercises to address weaknesses and build on your strengths.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="testimonials-section">
+            <div class="container">
+                <h2>What Players Say</h2>
+                <div class="testimonials">
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <p>"This app helped me improve my shooting percentage by 15% after just four weeks of following the training plan."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael T.">
+                            <div>
+                                <h4>Michael T.</h4>
+                                <p>Point Guard, High School</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <p>"As a coach, I use this tool to create personalized training for my players. It saves me hours of planning and my team has shown significant improvement."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Coach Sarah">
+                            <div>
+                                <h4>Coach Sarah</h4>
+                                <p>High School Basketball Coach</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <p>Have questions or suggestions? Get in touch with our team.</p>
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <label for="contact-name">Your Name</label>
+                        <input type="text" id="contact-name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-email">Email Address</label>
+                        <input type="email" id="contact-email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-message">Message</label>
+                        <textarea id="contact-message" placeholder="How can we help?" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2><i class="fas fa-basketball-ball"></i> Basketball Skill Trainer</h2>
+                    <p>Elevate your game with personalized training.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Basketball Skill Trainer. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Templates for generating training plans -->
+    <template id="training-plan-template">
+        <div class="training-plan">
+            <div class="plan-header">
+                <div class="player-info">
+                    <h3>Training Plan for <span class="player-name"></span></h3>
+                    <p><strong>Position:</strong> <span class="player-position"></span></p>
+                    <p><strong>Experience:</strong> <span class="player-experience"></span></p>
+                </div>
+                <div class="plan-summary">
+                    <p><strong>Focus Areas:</strong> <span class="focus-areas"></span></p>
+                    <p><strong>Weekly Schedule:</strong> <span class="training-frequency"></span></p>
+                </div>
+            </div>
+            
+            <div class="weekly-plan">
+                <h4>Weekly Training Schedule</h4>
+                <div class="weekly-schedule"></div>
+            </div>
+
+            <div class="skills-focus">
+                <h4>Skills Breakdown</h4>
+                <div class="skills-chart-container">
+                    <canvas id="skills-chart"></canvas>
+                </div>
+            </div>
+
+            <div class="training-notes">
+                <h4>Coaching Notes</h4>
+                <p class="coaching-notes"></p>
+            </div>
+        </div>
+    </template>
+
+    <template id="weekly-day-template">
+        <div class="training-day">
+            <h5 class="day-title"></h5>
+            <div class="day-exercises"></div>
+        </div>
+    </template>
+
+    <template id="exercise-template">
+        <div class="exercise">
+            <div class="exercise-header">
+                <h6 class="exercise-title"></h6>
+                <span class="exercise-duration"></span>
+            </div>
+            <p class="exercise-description"></p>
+        </div>
+    </template>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/training-data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
